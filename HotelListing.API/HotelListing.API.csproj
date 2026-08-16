@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include=".github\agents\api-security-reviewer.agent.md" />
     <Content Include=".github\instructions\copilot-instructions.md" />
     <Content Include=".github\instructions\dotnet10-api.instructions.md" />
   </ItemGroup>
