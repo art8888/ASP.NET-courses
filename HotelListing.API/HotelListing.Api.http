@@ -1,0 +1,27 @@
+@HotelListing_Host = http://localhost:5049
+
+GET {{HotelListing_Host}}/api/hotels
+Accept: application/json
+
+POST {{HotelListing_Host}}/api/hotels/
+Content-Type: application/json
+{
+    "id": 1,
+    "name": "Grand Plaza",
+    "address": "123 main st."
+    "rating": 4.5
+}
+
+
+
+PUT {{HotelListing_Host}}/api/hotels/1
+Content-Type: application/json
+{
+    "id": 1,
+    "name": "Grand Plaza",
+    "address": "123 main st."
+    "rating": 4.5
+}
+
+
+###
