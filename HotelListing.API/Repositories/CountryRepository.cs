@@ -6,9 +6,9 @@ public class CountryRepository : ICountryRepository
 {
     private static readonly List<Country> countries = new()
     {
-        new Country { Id = 1, Name = "United States", ShortName = "US" },
-        new Country { Id = 2, Name = "Canada", ShortName = "CA" },
-        new Country { Id = 3, Name = "United Kingdom", ShortName = "UK" }
+        new Country { CountryId = 1, Name = "United States", ShortName = "US" },
+        new Country { CountryId = 2, Name = "Canada", ShortName = "CA" },
+        new Country { CountryId = 3, Name = "United Kingdom", ShortName = "UK" }
     };
 
     public Task<IEnumerable<Country>> GetAllAsync()
@@ -18,7 +18,7 @@ public class CountryRepository : ICountryRepository
 
     public Task<Country?> GetByIdAsync(int id)
     {
-        var country = countries.FirstOrDefault(c => c.Id == id);
+        var country = countries.FirstOrDefault(c => c.CountryId == id);
         return Task.FromResult(country);
     }
 
@@ -30,7 +30,7 @@ public class CountryRepository : ICountryRepository
 
     public Task<bool> UpdateAsync(int id, Country updatedCountry)
     {
-        var country = countries.FirstOrDefault(c => c.Id == id);
+        var country = countries.FirstOrDefault(c => c.CountryId == id);
 
         if (country == null)
         {
@@ -45,7 +45,7 @@ public class CountryRepository : ICountryRepository
 
     public Task<bool> DeleteAsync(int id)
     {
-        var country = countries.FirstOrDefault(c => c.Id == id);
+        var country = countries.FirstOrDefault(c => c.CountryId == id);
 
         if (country == null)
         {
@@ -58,7 +58,7 @@ public class CountryRepository : ICountryRepository
 
     public Task<bool> ExistsAsync(int id)
     {
-        return Task.FromResult(countries.Any(c => c.Id == id));
+        return Task.FromResult(countries.Any(c => c.CountryId == id));
     }
 }
 
