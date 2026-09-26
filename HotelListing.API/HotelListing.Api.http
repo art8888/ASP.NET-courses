@@ -25,3 +25,30 @@ Content-Type: application/json
 
 
 ###
+GET {{HotelListing_Host}}/api/Countries
+
+POST {{HotelListing_Host}}/api/Countries
+Content-Type: application/json
+{
+    "id": 1,
+    "name": "United States"
+}
+###
+@id=1
+GET {{HotelListing_Host}}/api/Countries/{{id}}
+
+###
+DELETE {{HotelListing_Host}}/api/Countries/{{id}}
+
+###
+GET http://localhost:5049/api/Hotels
+
+###
+POST http://localhost:5049/api/Hotels
+Content-Type: application/json
+{
+    "id": 1,
+    "name": "Grand Plaza",
+    "address": "123 main st.",
+    "rating": 4.5
+}
