@@ -9,6 +9,11 @@ builder.Services.AddDbContext<HotelListingDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 // Add services to the dependency injection container
+builder.Services.AddControllers()
+    .AddJsonOptions(opt =>
+{
+    opt.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+});
 builder.Services
     .AddApplicationServices()
     .AddApiConfiguration();

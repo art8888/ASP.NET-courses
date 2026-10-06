@@ -1,13 +1,18 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace HotelListing.API.Data;
+namespace HotelListing.API.DTOs.Hotel;
 
-public class Hotel
+public class CreateHotelDto
 {
-    public int Id { get; set;  }
+    [Required]
     public required string Name { get; set;  }
+    
+    [MaxLength(150)]
     public required string Address { get; set;  }
+    
+    [Range(1, 5)]
     public double Rating { get; set;  }
+    
+    [Required]
     public string CountryId { get; set;  }
-    public Country? Country { get; set;  }
 }
